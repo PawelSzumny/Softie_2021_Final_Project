@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 import java.util.Random;
 
 // Klasa random tworzy randomowe połączenia dla różnego typu inputów do dalszych działąń
-public class RandomUser {
+public class RandomUser<country> {
     public static void main(String[] args) {
         RandomUser randomUser = new RandomUser();
         System.out.println(randomUser);
@@ -24,6 +24,7 @@ public class RandomUser {
     public String address2;
     public String city;
     public String phone_mobile;
+
 
     // Tworzy dane dla randomowego użytkownika i je drukuje
     public RandomUser() {

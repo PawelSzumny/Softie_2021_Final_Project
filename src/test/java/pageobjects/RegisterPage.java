@@ -52,6 +52,7 @@ public class RegisterPage extends BasePage {
     @FindBy(css = ".alert >ol")
     WebElement failAlert;
 
+
     public RegisterPage(WebDriver driver) {
         super(driver);
     }

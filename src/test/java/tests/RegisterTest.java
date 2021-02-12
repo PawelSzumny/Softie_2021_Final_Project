@@ -53,11 +53,6 @@ public class RegisterTest extends BaseTest {
         randomUser.lastName = "";
         randomUser.firstName = "";
         randomUser.password = "";
-        randomUser.dayOfBirth = "";
-        randomUser.monthOfBirth = 13;
-        randomUser.yearOfBirth = 1600;
-        randomUser.postalCode = "";
-        randomUser.state = "";
         randomUser.address1 = "";
         randomUser.address2 = "";
         randomUser.city = "";
@@ -67,10 +62,12 @@ public class RegisterTest extends BaseTest {
         registerPage.registerUser(randomUser);
 
         // asercja sprawdza czy pojawia się komunikat o braku wypełnienia wymagań
-        Assertions.assertTrue(registerPage.isAlertDisplayed("There are 8 errors"));
-/*        Assertions.assertTrue(registerPage.isAlertDisplayed("passwd is required."));
         Assertions.assertTrue(registerPage.isAlertDisplayed("lastname is required."));
-        Assertions.assertTrue(registerPage.isAlertDisplayed("firstname is required."));*/
+        Assertions.assertTrue(registerPage.isAlertDisplayed("firstname is required."));
+        Assertions.assertTrue(registerPage.isAlertDisplayed("passwd is required."));
+        Assertions.assertTrue(registerPage.isAlertDisplayed("address1 is required."));
+        Assertions.assertTrue(registerPage.isAlertDisplayed("city is required."));
 
     }
 }
+

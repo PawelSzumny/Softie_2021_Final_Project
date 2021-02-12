@@ -8,10 +8,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-
+// inlformacje o stronie która będzie otwierana
     protected final static String BASE_URL = "http://automationpractice.com/index.php";
     protected WebDriver driver;
 
+    // przypisanei konkretnych elementów ze strony do nazw zmiennych
     @FindBy(id="search_query_top")
     WebElement searchBox;
 
@@ -20,6 +21,7 @@ public class BasePage {
 
     @FindBy(className="login")
     WebElement goToLoginPageButton;
+
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -31,11 +33,11 @@ public class BasePage {
         searchBox.sendKeys(Keys.ENTER);
     }
 
-
+// kliknięcie przycisku login
     public void goToLoginPage() {
         goToLoginPageButton.click();
     }
-
+// kliknięcie przycisku wyloguj
     public boolean isUserLoggedIn() {
         return signOutButton.isDisplayed();
     }

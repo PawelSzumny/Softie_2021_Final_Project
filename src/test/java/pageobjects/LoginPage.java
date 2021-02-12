@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
+    // przypisanei konkretnych elementów ze strony do nazw zmiennych
     @FindBy(id="email_create")
     WebElement emailCreateNewUserBox;
 

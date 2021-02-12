@@ -10,6 +10,7 @@ import java.util.List;
 
 public class SearchResultPage extends BasePage {
 
+    // przypisanei konkretnych elementów ze strony do nazw zmiennych
     @FindBy(css = ".product_list .product-container")
     List<WebElement> products;
 

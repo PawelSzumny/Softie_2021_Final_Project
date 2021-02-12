@@ -8,6 +8,7 @@ import utils.RandomUser;
 
 public class RegisterPage extends BasePage {
 
+    // przypisanei konkretnych elementów ze strony do nazw zmiennych
     @FindBy(id = "customer_firstname")
     WebElement customerFirstName;
 
@@ -29,7 +30,7 @@ public class RegisterPage extends BasePage {
     WebElement years;
     Select year = new Select(years);
 
-    @FindBy(id = "address1")
+    @FindBy(css = "[id='address1']")
     WebElement address1;
 
     @FindBy(id = "city")
@@ -55,22 +56,23 @@ public class RegisterPage extends BasePage {
         super(driver);
     }
 
-    public boolean isAlertDisplayed(String expectedAlertText){
+    public boolean isAlertDisplayed(String expectedAlertText) {
         return failAlert.getText().contains(expectedAlertText);
     }
 
-    public void registerUser(RandomUser user){
+    // dane które uzupełniaja pola w formularzu rejestracji
+    public void registerUser(RandomUser user) {
         customerFirstName.sendKeys(user.firstName);
         customerLastName.sendKeys(user.lastName);
-        passwd.sendKeys((user.email));
+        passwd.sendKeys(user.password);
         day.selectByValue("" + user.dayOfBirth + "");
         month.selectByValue("" + user.monthOfBirth + "");
         year.selectByValue("" + user.yearOfBirth + "");
-//        address1.sendKeys(user.address1);
-//        city.sendKeys(user.city);
-//        postcode.sendKeys("" + user.zipCode);
-//        state.selectByVisibleText(user.state);
-//        phone_mobile.sendKeys(" " + user.mobile);
+        address1.sendKeys(user.address1);
+        city.sendKeys(user.city);
+        postcode.sendKeys("" + user.postalCode);
+        state.selectByVisibleText(user.state);
+        phone_mobile.sendKeys(" " + user.phone_mobile);
         submitButton.click();
     }
 }

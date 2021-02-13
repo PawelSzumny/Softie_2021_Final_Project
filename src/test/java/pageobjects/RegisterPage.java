@@ -18,7 +18,7 @@ public class RegisterPage extends BasePage {
     @FindBy(id = "passwd")
     WebElement passwd;
 
-    @FindBy(id = "days")
+    @FindBy(css = "[id='days']")
     WebElement days;
     Select day = new Select(days);
 

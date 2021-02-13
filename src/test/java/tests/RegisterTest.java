@@ -58,8 +58,8 @@ public class RegisterTest extends BaseTest {
         randomUser.city = "";
         randomUser.phone_mobile = "";
 
-        System.out.println(randomUser);
         registerPage.registerUser(randomUser);
+        System.out.println(randomUser);
 
         // asercja sprawdza czy pojawia się komunikat o braku wypełnienia wymagań
         Assertions.assertTrue(registerPage.isAlertDisplayed("lastname is required."));

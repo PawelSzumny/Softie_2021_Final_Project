@@ -39,14 +39,14 @@ public class LoginPage extends BasePage {
 
     public void goToLoginPage1(String password) {
         passwdLoginUserBox.sendKeys(password);
-/*        if (emailLoginUserBox == null){
-            submitLoginButton.sendKeys(Keys.ENTER); // do dopracowania
-        }*/
     }
-
     public void goToLoginPage2(String email) {
         emailLoginUserBox.sendKeys(email);
-/*        passwdLoginUserBox.sendKeys(password);*/ //do usunięcia lub połączenia email z password
+        submitLoginButton.sendKeys(Keys.ENTER);
+    }
+
+    public void goToLoginPage3(String password) {
+        passwdLoginUserBox.sendKeys(password);
         submitLoginButton.sendKeys(Keys.ENTER);
     }
 }

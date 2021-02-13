@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import pageobjects.HomePage;
 import pageobjects.LoginPage;
 import utils.RandomUser;
@@ -10,7 +11,7 @@ import utils.RandomUser;
 public class LoginTest extends BaseTest {
 
     // test sprawdzający poprawną logowanie użytkownika
-/*    @Test
+    @Test
     void shouldLoginUserWhenUserIsInBase() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
@@ -21,8 +22,11 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         RandomUser randomUser = new RandomUser();
         loginPage.goToLoginPage1(randomUser.password);
-        loginPage.goToLoginPage2(randomUser.email);*/
+        randomUser.email = "MyrnaWitting87711@gmail.com";
+        loginPage.goToLoginPage2(randomUser.email);
 
+        Assertions.assertEquals("Sign out",driver.findElement(By.className("logout")).getText());
+    }
 
     //Test sprawdzający logowanie użytkownika nie będącego w bazie
     @Test
@@ -39,10 +43,12 @@ public class LoginTest extends BaseTest {
         loginPage.goToLoginPage1(randomUser.password);
         loginPage.goToLoginPage2(randomUser.email);
 
+
         Assertions.assertTrue(loginPage.isAlertDisplayed("Authentication failed."));
     }
 
     //Test sprawdzający logowanie użytkownika bez podania hasła
+
     @Test
     void shouldDisplayCorrectAlertsWhenUserNoAddPassword() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
@@ -69,7 +75,7 @@ public class LoginTest extends BaseTest {
         //za pomocą klasy LoginPage w polu email tworzy randomowy email
         LoginPage loginPage = new LoginPage(driver);
         RandomUser randomUser = new RandomUser();
-        loginPage.goToLoginPage1(randomUser.password);
+        loginPage.goToLoginPage3(randomUser.password);
 
         Assertions.assertTrue(loginPage.isAlertDisplayed("An email address required."));
     }
@@ -95,3 +101,4 @@ public class LoginTest extends BaseTest {
 
 
 //3 testy negatywne: nie zarejestrowany użytkownik, brak hasła, brak maila.
+

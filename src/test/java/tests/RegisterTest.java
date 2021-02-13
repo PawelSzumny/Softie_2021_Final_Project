@@ -2,8 +2,6 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import pageobjects.HomePage;
 import pageobjects.LoginPage;
 import pageobjects.RegisterPage;
@@ -17,7 +15,7 @@ public class RegisterTest extends BaseTest {
     void shouldRegisterUserWhenMandatoryFieldsAreFilled() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
         //za pomocą klasy LoginPage w polu email tworzy randomowy email
@@ -40,7 +38,7 @@ public class RegisterTest extends BaseTest {
     void shouldDisplayCorrectAlertsWhenMandatoryDataIsMissing() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
         //za pomocą klasy LoginPage w polu email tworzy randomowy email

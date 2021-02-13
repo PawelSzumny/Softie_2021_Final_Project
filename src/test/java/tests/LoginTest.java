@@ -15,10 +15,10 @@ public class LoginTest extends BaseTest {
     void shouldLoginUserWhenUserIsInBase() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
-        //za pomocą klasy LoginPage w polu email tworzy randomowy email
+        //za pomocą klasy LoginPage w polu email wykorzystuje nadany email
         LoginPage loginPage = new LoginPage(driver);
         RandomUser randomUser = new RandomUser();
         loginPage.goToLoginPage1(randomUser.password);
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
     void shouldDisplayCorrectAlertsWhenUserIsNotInBase() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
         //za pomocą klasy LoginPage w polu email tworzy randomowy email
@@ -53,7 +53,7 @@ public class LoginTest extends BaseTest {
     void shouldDisplayCorrectAlertsWhenUserNoAddPassword() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
         //za pomocą klasy LoginPage w polu email tworzy randomowy email
@@ -69,7 +69,7 @@ public class LoginTest extends BaseTest {
     void shouldDisplayCorrectAlertsWhenUserNoAddEmail() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
         //za pomocą klasy LoginPage w polu email tworzy randomowy email
@@ -85,7 +85,7 @@ public class LoginTest extends BaseTest {
     void shouldDisplayCorrectAlertsWhenUserAddInvalidEmail() {
         // otwiera stronę domową za pomocą drivera i przechodzi do przycisku login
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        homePage.openPage1();
         homePage.goToLoginPage();
 
         //za pomocą klasy LoginPage w polu email tworzy randomowy email

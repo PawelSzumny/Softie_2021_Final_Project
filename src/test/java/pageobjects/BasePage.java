@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
 // inlformacje o stronie która będzie otwierana
-    protected final static String BASE_URL = "http://automationpractice.com/index.php";
+    protected final static String BASE_URL1 = "http://automationpractice.com/index.php";
+    protected final static String BASE_URL2 = "http://automationpractice.com/index.php?id_category=3&controller=category";
     protected WebDriver driver;
 
     // przypisanei konkretnych elementów ze strony do nazw zmiennych
@@ -22,6 +23,10 @@ public class BasePage {
     @FindBy(className="login")
     WebElement goToLoginPageButton;
 
+/*
+    @FindBy(="login")
+    WebElement goToLoginPageButton;
+*/
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -41,4 +46,7 @@ public class BasePage {
     public boolean isUserLoggedIn() {
         return signOutButton.isDisplayed();
     }
-}
+    // kliknięcie karty Woman
+    public void goToWomanPage() {
+        goToLoginPageButton.click();
+}}

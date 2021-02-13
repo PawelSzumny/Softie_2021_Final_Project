@@ -33,7 +33,7 @@ class BaseTest {
     @AfterAll
     protected static void tearDown() throws InterruptedException {
         // tylko tymczasowo
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         // zamyka okno przeglądarki
         /*driver.quit();*/
     }

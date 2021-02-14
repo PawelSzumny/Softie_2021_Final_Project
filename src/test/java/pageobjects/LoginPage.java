@@ -31,15 +31,18 @@ public class LoginPage extends BasePage {
     public boolean isAlertDisplayed(String expectedAlertText) {
         return failAlert.getText().contains(expectedAlertText);
     }
-//Użycie przycisków
+
+    //Użycie przycisków
     public void goToRegisterPage(String email) {
         emailCreateNewUserBox.sendKeys(email);
         emailCreateNewUserBox.sendKeys(Keys.ENTER);
     }
 
     public void goToLoginPage1(String password) {
+
         passwdLoginUserBox.sendKeys(password);
     }
+
     public void goToLoginPage2(String email) {
         emailLoginUserBox.sendKeys(email);
         submitLoginButton.sendKeys(Keys.ENTER);
